@@ -1,5 +1,4 @@
-package Sorts;
-
+import java.util.*;
 /* Java program for Bitonic Sort. Note that this program
 works only when size of input is a power of 2. */
 public class BitonicSort
@@ -10,21 +9,19 @@ public class BitonicSort
     interchanged. */
     void compAndSwap(int a[], int i, int j, int dir)
     {
-        if ( (a[i] > a[j] && dir == 1) ||
-                (a[i] < a[j] && dir == 0))
+        if ((a[i] > a[j] && dir == 1) || (a[i] < a[j] && dir == 0))
         {
-            // Swapping elements
+            // Swapping elements by using temp 
             int temp = a[i];
             a[i] = a[j];
             a[j] = temp;
         }
     }
 
-    /* It recursively sorts a bitonic sequence in ascending
-    order, if dir = 1, and in descending order otherwise
-    (means dir=0). The sequence to be sorted starts at
-    index position low, the parameter cnt is the number
-    of elements to be sorted.*/
+    /* It recursively sorts a bitonic sequence in ascending order, if dir = 1, and in descending order otherwise
+       (means dir=0). The sequence to be sorted starts atindex position low, the parameter cnt is the number
+       of elements to be sorted.
+    */
     void bitonicMerge(int a[], int low, int cnt, int dir)
     {
         if (cnt>1)
